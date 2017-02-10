@@ -1,0 +1,24 @@
+name       : mariadb
+version    : 10.1.21
+release    : 1
+source     :
+    - http://nl.mirror.babylon.network/mariadb//mariadb-10.1.21/source/mariadb-10.1.21.tar.gz : 5a816355781ea22a6c65a436d8162f19bd292ec90e2b7d9499c031ae4a659490
+license    : GPL-2.0
+component  : database
+summary    : MariaDB
+description: |
+    One of the most popular database servers. Made by the original developers of MySQL. Guaranteed to stay open source.
+builddeps  :
+    - libboost-devel
+    - bison-devel
+    - ncurses-devel
+    - pkgconfig(zlib)
+    - pkgconfig(libevent)
+    - pkgconfig(libssl)
+    - pkgconfig(jemalloc)
+setup      : |
+    %cmake .
+build      : |
+    %make
+install    : |
+    %make_install
